@@ -1,0 +1,7 @@
+rezaul@agunthefire:~$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+rezaul@agunthefire:~$ docker ps -as
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES     SIZE
+rezaul@agunthefire:~$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+rezaul@agunthefire:~$ 
