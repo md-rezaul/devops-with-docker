@@ -1,0 +1,35 @@
+rezaul@agunthefire:~$ docker run -it  devopsdockeruh/simple-web-service:ubuntu
+Starting log output
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+^Crezaul@agunthefire:~docker ps -a
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED          STATUS                      PORTS     NAMES
+6ec885e37e02   devopsdockeruh/simple-web-service:ubuntu   "/usr/src/app/server"   20 seconds ago   Exited (2) 15 seconds ago             clever_fermi
+rezaul@agunthefire:~$ docker start clever_fermi
+clever_fermi
+rezaul@agunthefire:~$ docker attach --no-stdin clever_fermi
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+^C
+rezaul@agunthefire:~$ docker exec -it clever_fermi bash
+root@6ec885e37e02:/usr/src/app# tail -f ./text
+tail: cannot open './text' for reading: No such file or directory
+tail: no files remaining
+root@6ec885e37e02:/usr/src/app# tail -f text.log   
+2022-02-23 06:06:17 +0000 UTC
+2022-02-23 06:06:19 +0000 UTC
+2022-02-23 06:06:21 +0000 UTC
+2022-02-23 06:06:23 +0000 UTC
+2022-02-23 06:06:25 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-23 06:06:27 +0000 UTC
+2022-02-23 06:06:29 +0000 UTC
+2022-02-23 06:06:31 +0000 UTC
+2022-02-23 06:06:33 +0000 UTC
+2022-02-23 06:06:35 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-23 06:06:37 +0000 UTC
+2022-02-23 06:06:39 +0000 UTC
+^C
+root@6ec885e37e02:/usr/src/app# 
